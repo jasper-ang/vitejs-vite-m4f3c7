@@ -1,0 +1,37 @@
+/* Projects.css */
+#projects {
+    padding: 2rem;
+  }
+  
+  #projects h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .project-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  
+  .project-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .project-card p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .project-card a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .project-card a:hover {
+    text-decoration: underline;
+  }
+  
