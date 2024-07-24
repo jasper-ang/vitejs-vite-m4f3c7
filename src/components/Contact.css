@@ -1,7 +1,8 @@
 /* Contact.css */
 #contact {
   padding: 2rem;
-  background: #f4f4f4;
+  background: #333; /* Dark background for consistency */
+  color: white; /* White text for consistency */
 }
 
 #contact h2 {
@@ -22,17 +23,19 @@
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
+  color: #333; /* Text color inside inputs */
+  background: white; /* Background color inside inputs */
 }
 
 #contact button {
   padding: 1rem 2rem;
-  background: #333;
-  color: white;
+  background: #333; /* Dark background for button */
+  color: white; /* White text for button */
   border: none;
   cursor: pointer;
   border-radius: 5px;
 }
 
 #contact button:hover {
-  background: #555;
+  background: #555; /* Slightly lighter background on hover */
 }

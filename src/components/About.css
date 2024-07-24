@@ -1,7 +1,8 @@
 /* About.css */
 #about {
   padding: 2rem;
-  background: #f4f4f4;
+  background: #333; /* Dark background for consistency */
+  color: white; /* White text for consistency */
 }
 
 #about h2 {

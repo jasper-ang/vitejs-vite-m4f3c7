@@ -13,6 +13,8 @@ html {
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  background: #222; /* Dark background for the entire body */
+  color: white; /* White text color for the entire body */
 }
 
 header {
@@ -27,6 +29,7 @@ nav ul {
   display: flex;
   justify-content: center;
   padding: 0;
+  margin: 0;
 }
 
 nav ul li {

@@ -1,7 +1,7 @@
 /* Home.css */
 #home {
   background: url('/path-to-your-image.jpg') no-repeat center center/cover;
-  color: white;
+  color: white; /* White text for consistency */
   padding: 5rem 2rem;
   text-align: center;
 }
