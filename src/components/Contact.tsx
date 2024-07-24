@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './Contact.css';
 import emailjs from 'emailjs-com';
+import './Contact.css';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -18,15 +18,20 @@ const Contact: React.FC = () => {
     e.preventDefault();
 
     emailjs.send(
-      'service_ojupt1h', 
-      'template_zm7nj3h', 
-      formData, 
-      '7_Rs9PtTZfPLJEltZv-4S'
+      'service_ojupt1h', // Your actual Service ID
+      'template_zm7nj3h', // Your actual Template ID
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        reply_to: formData.email
+      },
+      'TXW8IqXqbLCpakPf1' // Your actual User ID
     ).then((result) => {
-        console.log(result.text);
-    }, (error) => {
-        console.log(error.text);
-    });
+        console.log('Email sent successfully:', result.text);
+      }, (error) => {
+        console.error('Error sending email:', error.text);
+      });
 
     setFormData({ name: '', email: '', message: '' });
   };
