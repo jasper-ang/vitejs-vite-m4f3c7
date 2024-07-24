@@ -9,6 +9,8 @@ const Contact: React.FC = () => {
     message: ''
   });
 
+  const [successMessage, setSuccessMessage] = useState(''); // New state for success message
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -26,9 +28,10 @@ const Contact: React.FC = () => {
         message: formData.message,
         reply_to: formData.email
       },
-      'TXW8IqXqbLCpakPf1' // Your actual User ID
+      '7_Rs9PtTZfPLJEltZv-4S' // Your actual User ID
     ).then((result) => {
         console.log('Email sent successfully:', result.text);
+        setSuccessMessage('Welcome to the club ;)'); // Update success message
       }, (error) => {
         console.error('Error sending email:', error.text);
       });
@@ -39,6 +42,7 @@ const Contact: React.FC = () => {
   return (
     <div id="contact">
       <h2>Contact Me</h2>
+      {successMessage && <p className="success-message">{successMessage}</p>} {/* Conditionally render success message */}
       <form onSubmit={handleSubmit}>
         <input 
           type="text" 

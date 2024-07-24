@@ -24,19 +24,31 @@
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  color: #333; /* Text color inside inputs */
+  color: black; /* Text color inside inputs */
   background: white; /* Background color inside inputs */
 }
 
 #contact button {
   padding: 1rem 2rem;
-  background: #007BFF; /* Button background color */
-  color: white; /* Button text color */
+  background: black; /* Button background color (black) */
+  color: #ffc0cb; /* Button text color (pink) */
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 #contact button:hover {
-  background: #0056b3; /* Darker blue on hover */
+  background: black; /* Slightly lighter black on hover */
+  color: #ffc0cb; /* Keep text color (pink) on hover */
+}
+
+.success-message {
+  margin: 1rem 0;
+  padding: 1rem;
+  color: #ffc0cb; /* Text color (pink) */
+  border: 1px solid #ffc0cb; /* Border color (pink) */
+  border-radius: 5px;
+  background: black; /* Background color (black) */
+  color: white; /* Text color (white) */
 }

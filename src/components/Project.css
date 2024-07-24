@@ -51,7 +51,7 @@ button {
   cursor: pointer;
   border-radius: 5px;
   background-color: black; /* Black background */
-  color: pink; /* Pink text */
+  color: #ffc0cb; /* Pink text */
   transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
