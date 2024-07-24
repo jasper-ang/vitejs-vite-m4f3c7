@@ -1,5 +1,7 @@
 /* App.css */
 /* Add this to your main CSS file or a separate reset.css file */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +13,7 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.6;
   background: #222; /* Dark background for the entire body */
   color: white; /* White text color for the entire body */
