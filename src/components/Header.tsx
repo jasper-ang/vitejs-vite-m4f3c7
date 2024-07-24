@@ -11,6 +11,8 @@ const Header: React.FC = () => {
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="https://www.linkedin.com/in/jasper-z-ang/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/jasper-ang" target="_blank" rel="noopener noreferrer">GitHub</a></li>
         </ul>
       </nav>
     </header>
