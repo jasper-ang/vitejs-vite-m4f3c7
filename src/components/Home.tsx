@@ -7,7 +7,7 @@ const Home: React.FC = () => {
     <div id="home">
       <h1>Welcome to My Portfolio</h1>
       <p>This is the home section.</p>
-      <img src={jasperImage} alt="Jasper" className="example-image" />
+      <img src={jasperImage} alt="Jasper" height = "300" className="example-image" />
     </div>
   );
 };
