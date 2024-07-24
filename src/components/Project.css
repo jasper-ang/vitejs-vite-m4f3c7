@@ -1,36 +1,61 @@
-/* Projects.css */
+/* Project.css */
 #projects {
   padding: 2rem;
 }
 
-#projects h2 {
-  font-size: 2.5rem;
+h2 {
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.project-card {
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.button-group button {
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: black; /* Black background */
+  color: pink; /* Pink text */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.button-group button.active {
+  background-color: pink; /* Pink background when active */
+  color: black; /* Black text when active */
+}
+
+.button-group button:hover {
+  background-color: pink; /* Pink background on hover */
+  color: black; /* Black text on hover */
+}
+
+.details-section {
+  margin-bottom: 1rem;
+}
+
+.details-content {
+  padding: 1rem;
+  background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background: #fff;
 }
 
-.project-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: black; /* Black background */
+  color: pink; /* Pink text */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
-.project-card p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-.project-card a {
-  color: #007BFF;
-  text-decoration: none;
-}
-
-.project-card a:hover {
-  text-decoration: underline;
+button:hover {
+  background-color: pink; /* Pink background on hover */
+  color: black; /* Black text on hover */
 }
