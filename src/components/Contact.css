@@ -3,6 +3,7 @@
   padding: 2rem;
   background: #333; /* Dark background for consistency */
   color: white; /* White text for consistency */
+  text-align: center;
 }
 
 #contact h2 {
@@ -29,13 +30,13 @@
 
 #contact button {
   padding: 1rem 2rem;
-  background: #333; /* Dark background for button */
-  color: white; /* White text for button */
+  background: #007BFF; /* Button background color */
+  color: white; /* Button text color */
   border: none;
   cursor: pointer;
   border-radius: 5px;
 }
 
 #contact button:hover {
-  background: #555; /* Slightly lighter background on hover */
+  background: #0056b3; /* Darker blue on hover */
 }
