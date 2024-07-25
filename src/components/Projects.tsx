@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import './Project.css';
+import React, { useState } from 'react'
+import './Project.css'
 
 const Projects: React.FC = () => {
-  const [activeButton, setActiveButton] = useState('website');
-  const [showDetails, setShowDetails] = useState(false);
+  const [activeButton, setActiveButton] = useState('website')
+  const [showDetails, setShowDetails] = useState(false)
 
   const handleButtonClick = (button: string) => {
-    setActiveButton(button);
-  };
+    setActiveButton(button)
+  }
 
   const toggleDetails = () => {
-    setShowDetails(!showDetails);
-  };
+    setShowDetails(!showDetails)
+  }
 
   return (
     <div id="projects">
@@ -35,7 +35,12 @@ const Projects: React.FC = () => {
           <div>
             <p>This is the website project description.</p>
             <br></br>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis porro a cumque culpa recusandae ab, aliquid cum saepe tempora laboriosam consectetur aperiam ad. Perferendis quam magnam illum sequi, praesentium culpa?</p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
+              porro a cumque culpa recusandae ab, aliquid cum saepe tempora
+              laboriosam consectetur aperiam ad. Perferendis quam magnam illum
+              sequi, praesentium culpa?
+            </p>
             <br></br>
           </div>
         )}
@@ -43,7 +48,12 @@ const Projects: React.FC = () => {
           <div>
             <p>This is the Aquila project description.</p>
             <br></br>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis porro a cumque culpa recusandae ab, aliquid cum saepe tempora laboriosam consectetur aperiam ad. Perferendis quam magnam illum sequi, praesentium culpa?</p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
+              porro a cumque culpa recusandae ab, aliquid cum saepe tempora
+              laboriosam consectetur aperiam ad. Perferendis quam magnam illum
+              sequi, praesentium culpa?
+            </p>
             <br></br>
           </div>
         )}
@@ -58,7 +68,7 @@ const Projects: React.FC = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

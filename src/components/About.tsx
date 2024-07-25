@@ -1,5 +1,5 @@
-import React from 'react';
-import './About.css';
+import React from 'react'
+import './About.css'
 
 const About: React.FC = () => {
   return (
@@ -7,7 +7,7 @@ const About: React.FC = () => {
       <h2>About Me</h2>
       <p>This is the about section.</p>
     </div>
-  );
-};
+  )
+}
 
-export default About;
+export default About

@@ -21,7 +21,9 @@ h2 {
   border-radius: 5px;
   background-color: black; /* Black background */
   color: pink; /* Pink text */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  transition:
+    background-color 0.3s,
+    color 0.3s; /* Smooth transition */
 }
 
 .button-group button.active {
@@ -52,7 +54,9 @@ button {
   border-radius: 5px;
   background-color: black; /* Black background */
   color: #ffc0cb; /* Pink text */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  transition:
+    background-color 0.3s,
+    color 0.3s; /* Smooth transition */
 }
 
 button:hover {

@@ -1,5 +1,5 @@
-export interface formStructure  {
-    name: string,
-    email: string,
-    message: string,
+export interface formStructure {
+  name: string
+  email: string
+  message: string
 }
