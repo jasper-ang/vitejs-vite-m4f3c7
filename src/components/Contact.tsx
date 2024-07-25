@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import './Contact.css';
+import { DEFAULT_FORM_STRUCTURE } from '../constants';
+import {formStructure} from '../interface';
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState<formStructure>(DEFAULT_FORM_STRUCTURE);
 
-  const [successMessage, setSuccessMessage] = useState(''); // New state for success message
+  const [successMessage, setSuccessMessage] = useState<string>(''); // New state for success message
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -36,7 +34,7 @@ const Contact: React.FC = () => {
         console.error('Error sending email:', error.text);
       });
 
-    setFormData({ name: '', email: '', message: '' });
+    setFormData(DEFAULT_FORM_STRUCTURE);
   };
 
   return (
