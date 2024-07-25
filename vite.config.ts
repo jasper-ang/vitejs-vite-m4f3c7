@@ -7,8 +7,8 @@ export default defineConfig({
     outDir: 'dist', // Specify the output directory
     rollupOptions: {
       output: {
-        manualChunks: undefined // Ensure no code splitting issues
-      }
-    }
+        manualChunks: undefined, // Ensure no code splitting issues
+      },
+    },
   },
 })
