@@ -1,21 +1,30 @@
 const express = require('express')
 const dotenv = require('dotenv')
-const connectDB = require('./config/db')
-const postRoutes = require('./routes/postRoutes')
-const errorHandler = require('./middleware/errorHandler')
-const logger = require('./utils/logger')
+const path = require('path')
+const connectDB = require('./src/backend/db')
+const postRoutes = require('./src/backend/postRoutes')
+const errorHandler = require('./src/backend/errorHandler')
+const logger = require('./src/backend/logger')
 const cors = require('cors')
 
-dotenv.config() // Load environment variables
+dotenv.config({ path: path.resolve(__dirname, './src/.env') }) // Load environment variables
 
-connectDB()
+// Connect to database
+connectDB().catch((error) => {
+  console.error('Error connecting to the database', error)
+  process.exit(1)
+})
 
 const app = express()
 
 app.use(cors())
 app.use(express.json())
 app.use(logger)
+
+// Routes
 app.use('/api', postRoutes)
+
+// Error Handler Middleware
 app.use(errorHandler)
 
 const PORT = process.env.PORT || 5000

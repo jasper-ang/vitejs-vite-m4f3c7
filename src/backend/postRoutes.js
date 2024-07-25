@@ -1,9 +1,16 @@
 const express = require('express')
-const { getPosts, createPost } = require('../controllers/postController')
-
 const router = express.Router()
+const postController = require('./postController')
 
-router.get('/posts', getPosts)
-router.post('/posts', createPost)
+// Define your routes here
+router
+  .route('/posts')
+  .get(postController.getPosts)
+  .post(postController.createPost)
+router
+  .route('/posts/:id')
+  .get(postController.getPost)
+  .put(postController.updatePost)
+  .delete(postController.deletePost)
 
 module.exports = router
