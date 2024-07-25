@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Project.css'
+import './Projects.css'
 
 const Projects: React.FC = () => {
   const [activeButton, setActiveButton] = useState('website')
