@@ -1,24 +1,35 @@
 import { useState, useEffect } from 'react'
+import api from '../services/api'
 
-export const useFetch = (fetchFunction: Function) => {
-  const [data, setData] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+const useFetch = (endpoint: string) => {
+  const [data, setData] = useState<any>(null)
+  const [loading, setLoading] = useState<boolean>(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true)
+      setError(null) // Reset error before fetching data
+
       try {
-        const result = await fetchFunction()
-        setData(result)
+        const response = await api.get(endpoint)
+        setData(response.data)
       } catch (err) {
-        setError(err)
+        // Ensure err is properly typed
+        if (err instanceof Error) {
+          setError(err.message)
+        } else {
+          setError('An unexpected error occurred')
+        }
       } finally {
         setLoading(false)
       }
     }
 
     fetchData()
-  }, [fetchFunction])
+  }, [endpoint])
 
   return { data, loading, error }
 }
+
+export default useFetch

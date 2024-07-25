@@ -6,7 +6,7 @@ const errorHandler = require('./middleware/errorHandler')
 const logger = require('./utils/logger')
 const cors = require('cors')
 
-dotenv.config()
+dotenv.config() // Load environment variables
 
 connectDB()
 
