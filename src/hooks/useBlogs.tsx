@@ -8,8 +8,9 @@ export interface Blog {
   content: string
 }
 
-// Initialize the Realm app with the App ID from environment variables
-const app = new Realm.App({ id: "mongodb+srv://jasperzyang:<password>@blogv1.wfkueom.mongodb.net/" })
+const app = new Realm.App({
+  id: 'mongodb+srv://jasperang:Jasper00))@blogv1.wfkueom.mongodb.net/',
+})
 
 const useBlogs = () => {
   const [blogs, setBlogs] = useState<Blog[]>([])
@@ -20,11 +21,8 @@ const useBlogs = () => {
   const getCollection = async () => {
     const credentials = Realm.Credentials.anonymous()
     try {
-      console.log('App created')
       const user = await app.logIn(credentials)
-      console.log('User logged in', user)
       const mongo = user.mongoClient('mongodb-atlas')
-      console.log('MongoClient created')
       return mongo
         .db(process.env.REACT_APP_DATABASE_NAME!)
         .collection('firstseries')

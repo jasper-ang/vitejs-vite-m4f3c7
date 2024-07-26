@@ -1,33 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import { Blog } from '../hooks/useBlogs';
+import React, { useState, useEffect } from 'react'
+import { Blog } from '../hooks/useBlogs'
 
 interface BlogFormProps {
-  initialBlog?: Blog | null;
-  onSave: (blog: Blog) => void;
+  initialBlog?: Blog | null
+  onSave: (blog: Blog) => void
 }
 
 const BlogForm: React.FC<BlogFormProps> = ({ initialBlog, onSave }) => {
-  const [blog, setBlog] = useState<Blog>({ _id: '', title: '', content: '' });
+  const [blog, setBlog] = useState<Blog>({ _id: '', title: '', content: '' })
 
   useEffect(() => {
     if (initialBlog) {
-      setBlog(initialBlog);
+      setBlog(initialBlog)
     }
-  }, [initialBlog]);
+  }, [initialBlog])
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setBlog((prevBlog) => ({ ...prevBlog, [name]: value }));
-  };
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target
+    setBlog((prevBlog) => ({ ...prevBlog, [name]: value }))
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!blog._id) {
-      blog._id = Math.random().toString(36).substr(2, 9); // generate a simple unique id
-    }
-    onSave(blog);
-    setBlog({ _id: '', title: '', content: '' });
-  };
+    e.preventDefault()
+    onSave(blog)
+    setBlog({ _id: '', title: '', content: '' })
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -48,7 +47,7 @@ const BlogForm: React.FC<BlogFormProps> = ({ initialBlog, onSave }) => {
       />
       <button type="submit">Save</button>
     </form>
-  );
-};
+  )
+}
 
-export default BlogForm;
+export default BlogForm
