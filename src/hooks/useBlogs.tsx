@@ -18,9 +18,15 @@ const useBlogs = () => {
 
   // Function to get the MongoDB collection
   const getCollection = async () => {
-    const user = await app.logIn(Realm.Credentials.anonymous())
-    const mongo = user.mongoClient('mongodb-atlas')
-    return mongo.db('your-database-name').collection('blogs')
+    const credentials = Realm.Credentials.anonymous()
+    try {
+      const user = await app.logIn(credentials)
+      const mongo = user.mongoClient('mongodb-atlas')
+      return mongo.db(process.env.REACT_APP_DATABASE_NAME!).collection('blogs')
+    } catch (err) {
+      setError('Failed to log in and get collection')
+      throw err
+    }
   }
 
   // Fetch blogs when the component mounts
