@@ -9,7 +9,7 @@ export interface Blog {
 }
 
 // Initialize the Realm app with the App ID from environment variables
-const app = new Realm.App({ id: process.env.REACT_APP_REALM_APP_ID! })
+const app = new Realm.App({ id: "mongodb+srv://jasperzyang:<password>@blogv1.wfkueom.mongodb.net/" })
 
 const useBlogs = () => {
   const [blogs, setBlogs] = useState<Blog[]>([])
@@ -20,31 +20,33 @@ const useBlogs = () => {
   const getCollection = async () => {
     const credentials = Realm.Credentials.anonymous()
     try {
+      console.log('App created')
       const user = await app.logIn(credentials)
+      console.log('User logged in', user)
       const mongo = user.mongoClient('mongodb-atlas')
-      return mongo.db(process.env.REACT_APP_DATABASE_NAME!).collection('blogs')
+      console.log('MongoClient created')
+      return mongo
+        .db(process.env.REACT_APP_DATABASE_NAME!)
+        .collection('firstseries')
     } catch (err) {
       setError('Failed to log in and get collection')
+      console.error('Error:', err)
       throw err
     }
   }
 
-  // Fetch blogs when the component mounts
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      setLoading(true)
-      try {
-        const collection = await getCollection()
-        const result = await collection.find({})
-        setBlogs(result)
-      } catch (err) {
-        setError('Failed to fetch blogs')
-      } finally {
-        setLoading(false)
-      }
+  // Function to fetch blogs
+  const fetchBlogs = async () => {
+    try {
+      const collection = await getCollection()
+      const result = await collection.find({})
+      setBlogs(result)
+    } catch (err) {
+      setError('Failed to fetch blogs')
+    } finally {
+      setLoading(false)
     }
-    fetchBlogs()
-  }, [])
+  }
 
   // Function to create a blog
   const createBlog = async (blog: Blog) => {
@@ -85,6 +87,11 @@ const useBlogs = () => {
       setError('Failed to delete blog')
     }
   }
+
+  // Initial fetch of blogs
+  useEffect(() => {
+    fetchBlogs()
+  }, [])
 
   // Return the blog data and CRUD functions
   return { blogs, loading, error, createBlog, updateBlog, deleteBlog }
