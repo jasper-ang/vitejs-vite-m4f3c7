@@ -1,25 +1,25 @@
-import React from 'react'
-import { Blog } from '../hooks/useBlogs'
+import React from 'react';
+import { Blog } from '../hooks/useBlogs';
 
 interface BlogListProps {
-  blogs: Blog[]
-  onDelete: (id: string) => void
-  onEdit: (blog: Blog) => void
+  blogs: Blog[];
+  onDelete: (id: string) => void;
+  onEdit: (blog: Blog) => void;
 }
 
 const BlogList: React.FC<BlogListProps> = ({ blogs, onDelete, onEdit }) => {
   return (
     <div>
       {blogs.map((blog) => (
-        <div key={blog.id}>
+        <div key={blog._id}>
           <h2>{blog.title}</h2>
           <p>{blog.content}</p>
           <button onClick={() => onEdit(blog)}>Edit</button>
-          <button onClick={() => onDelete(blog.id)}>Delete</button>
+          <button onClick={() => onDelete(blog._id!)}>Delete</button>
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default BlogList
+export default BlogList;
