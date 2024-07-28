@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import useBlogs, { Blog } from '../hooks/useBlogs'
-import BlogList from '../components/BlogList'
-import BlogForm from '../components/BlogForm'
+import useBlogs, { Blog } from '../../hooks/useBlogs'
+import BlogList from './BlogList'
+import BlogForm from './BlogForm'
 
 const BlogPage: React.FC = () => {
   const { blogs, createBlog, updateBlog, deleteBlog } = useBlogs()

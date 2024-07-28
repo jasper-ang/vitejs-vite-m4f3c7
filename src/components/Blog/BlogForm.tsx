@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Blog } from '../hooks/useBlogs'
+import { Blog } from '../../hooks/useBlogs'
+import './BlogForm.css'
 
 interface BlogFormProps {
   initialBlog?: Blog | null

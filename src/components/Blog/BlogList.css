@@ -1,0 +1,30 @@
+/* BlogList.css */
+.blog-list {
+  margin-top: 20px;
+}
+
+.blog-entry {
+  background-color: #2e2e2e;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.blog-entry h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.blog-entry p {
+  margin: 0.5rem 0 0 0;
+}
+
+.blog-entry button {
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}

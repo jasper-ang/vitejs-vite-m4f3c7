@@ -5,7 +5,7 @@ import Home from './components/Home'
 import About from './components/About'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
-import BlogPage from './pages/BlogPage'
+import BlogPage from './components/Blog/BlogPage'
 import './styles/App.css'
 
 const App: React.FC = () => {

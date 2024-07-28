@@ -1,5 +1,6 @@
 import React from 'react'
-import { Blog } from '../hooks/useBlogs'
+import { Blog } from '../../hooks/useBlogs'
+import './BlogList.css'
 
 interface BlogListProps {
   blogs: Blog[]
