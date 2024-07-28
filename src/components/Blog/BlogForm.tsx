@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Blog } from '../../hooks/useBlogs'
-import './BlogForm.css'
+import { Blog } from '../../hooks/useBlogs' // Correct the import path
+import './BlogForm.css' // Import your CSS for styling
 
 interface BlogFormProps {
   initialBlog?: Blog | null
@@ -20,12 +20,12 @@ const BlogForm: React.FC<BlogFormProps> = ({ initialBlog, onSave }) => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target
-    setBlog((prevBlog) => ({ ...prevBlog, [name]: value }))
+    setBlog((prevBlog: Blog) => ({ ...prevBlog, [name]: value })) // Type the prevBlog parameter
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    onSave(blog)
+    await onSave(blog)
     setBlog({ _id: '', title: '', content: '' })
   }
 

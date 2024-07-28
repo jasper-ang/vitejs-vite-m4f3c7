@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 import useBlogs, { Blog } from '../../hooks/useBlogs'
-import BlogList from './BlogList'
-import BlogForm from './BlogForm'
+import BlogList from '../Blog/BlogList'
+import BlogForm from '../Blog/BlogForm'
 
 const BlogPage: React.FC = () => {
-  const { blogs, createBlog, updateBlog, deleteBlog } = useBlogs()
+  const { blogs, createBlog, updateBlog, deleteBlog, loading, error } =
+    useBlogs()
   const [editingBlog, setEditingBlog] = useState<Blog | null>(null)
 
-  const handleSave = (blog: Blog) => {
+  const handleSave = async (blog: Blog) => {
     if (editingBlog) {
-      updateBlog(blog._id!, blog)
+      await updateBlog(blog._id!, blog)
     } else {
-      createBlog(blog)
+      await createBlog(blog)
     }
     setEditingBlog(null)
   }
@@ -24,9 +25,13 @@ const BlogPage: React.FC = () => {
     deleteBlog(id)
   }
 
+  if (loading) return <div>Loading...</div>
+  if (error) return <div>Error: {error}</div>
+
   return (
-    <div>
+    <div className="blog-page">
       <h1>Blogs</h1>
+      <>{JSON.stringify(blogs)}</>
       <BlogForm initialBlog={editingBlog} onSave={handleSave} />
       <BlogList blogs={blogs} onDelete={handleDelete} onEdit={handleEdit} />
     </div>
